@@ -19,16 +19,26 @@
 # Product-specific compile-time definitions.
 #
 
-BOARD_GPS_LIBRARIES := libgps
-BOARD_CAMERA_LIBRARIES := libcamera
+ifeq ($(QC_PROP),true)
+    BOARD_USES_QCOM_HARDWARE := true
+    BOARD_USES_QCOM_7x_CHIPSET := true
 
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_7x_CHIPSET := true
+    ifneq ($(BUILD_TINY_ANDROID), true)
+    BOARD_GPS_LIBRARIES := libgps
+    BOARD_CAMERA_LIBRARIES := libcamera
+    #BOARD_HAVE_BLUETOOTH := true
+    endif   # !BUILD_TINY_ANDROID
+
+else
+    BOARD_USES_GENERIC_AUDIO := true
+    USE_CAMERA_STUB := true
+
+endif # QC_PROP
+
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
-#BOARD_HAVE_BLUETOOTH := true
 
 TARGET_BOOTLOADER_LIBS := \
 	libboot_board_ffa \
