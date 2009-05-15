@@ -31,7 +31,7 @@ ptentry PTABLE[] = {
     },
     {
         .start = 872,
-        .length = 155 + 1024,
+        .length = 151 + 1024,
         .name = "userdata",
     },
     {
