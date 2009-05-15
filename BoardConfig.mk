@@ -23,11 +23,20 @@ ifeq ($(QC_PROP),true)
     BOARD_USES_QCOM_HARDWARE := true
     BOARD_USES_QCOM_7x_CHIPSET := true
 
-    ifneq ($(BUILD_TINY_ANDROID), true)
+    ifeq ($(BUILD_TINY_ANDROID), true)
+    subdirs += \
+      vendor/qcom-proprietary/diag \
+      vendor/qcom-proprietary/gps \
+      vendor/qcom-proprietary/kernel-tests \
+      vendor/qcom-proprietary/modem \
+      vendor/qcom-proprietary/oncrpc \
+      hardware \
+      external/wpa_supplicant
+    else
     BOARD_GPS_LIBRARIES := libgps
     BOARD_CAMERA_LIBRARIES := libcamera
     #BOARD_HAVE_BLUETOOTH := true
-    endif   # !BUILD_TINY_ANDROID
+    endif   # BUILD_TINY_ANDROID
 
 else
     BOARD_USES_GENERIC_AUDIO := true
