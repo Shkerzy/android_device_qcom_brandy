@@ -44,7 +44,6 @@ else
 
 endif # QC_PROP
 
-
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
@@ -56,5 +55,8 @@ TARGET_BOOTLOADER_LIBS := \
 
 TARGET_BOOTLOADER_LINK_SCRIPT := \
 	vendor/qcom/$(TARGET_PRODUCT)/boot/boot.ld
+
+TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
 
 BOARD_KERNEL_CMDLINE := mem=203M console=ttyMSM2,115200n8 androidboot.hardware=qcom
