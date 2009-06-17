@@ -26,7 +26,7 @@ ifeq ($(QC_PROP),true)
     ifneq ($(BUILD_TINY_ANDROID), true)
     BOARD_GPS_LIBRARIES := libloc_api
     BOARD_CAMERA_LIBRARIES := libcamera
-    #BOARD_HAVE_BLUETOOTH := true
+    BOARD_HAVE_BLUETOOTH := true
     endif   # !BUILD_TINY_ANDROID
 
 else
