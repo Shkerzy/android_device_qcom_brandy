@@ -26,12 +26,27 @@ ptentry PTABLE[] = {
     },
     {
         .start = 360,
+        .length = 40,
+        .name = "cache",
+    },
+    {
+        .start = 400,
+        .length = 40,
+        .name = "recovery",
+    },
+    {
+        .start = 440,
+        .length = 3,
+        .name = "splash",
+    },
+    {
+        .start = 443,
         .length = 512,
         .name = "system",
     },
     {
-        .start = 872,
-        .length = 151 + 1024,
+        .start = 955,
+        .length = 68 + 1024,
         .name = "userdata",
     },
     {
