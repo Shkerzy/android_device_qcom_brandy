@@ -41,12 +41,12 @@ ptentry PTABLE[] = {
     },
     {
         .start = 443,
-        .length = 512,
+        .length = 552,
         .name = "system",
     },
     {
-        .start = 955,
-        .length = 68 + 1024,
+        .start = 995,
+        .length = 28 + 1024,
         .name = "userdata",
     },
     {
