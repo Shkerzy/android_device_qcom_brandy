@@ -17,7 +17,7 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := msm7627-perf_defconfig
+    KERNEL_DEFCONFIG := msm7627_defconfig
 endif
 
 include kernel/AndroidKernel.mk
