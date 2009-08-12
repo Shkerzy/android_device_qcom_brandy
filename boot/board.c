@@ -20,33 +20,33 @@
 
 ptentry PTABLE[] = {
     {
-        .start = 304,
+        .start = 555,
         .length = 40,
         .name = "boot",
     },
     {
-        .start = 360,
+        .start = 611,
         .length = 40,
         .name = "cache",
     },
     {
-        .start = 400,
+        .start = 651,
         .length = 40,
         .name = "recovery",
     },
     {
-        .start = 440,
+        .start = 691,
         .length = 3,
         .name = "splash",
     },
     {
-        .start = 443,
+        .start = 694,
         .length = 552,
         .name = "system",
     },
     {
-        .start = 995,
-        .length = 28 + 1024,
+        .start = 1246,
+        .length = 801,
         .name = "userdata",
     },
     {
