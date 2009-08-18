@@ -51,5 +51,6 @@ TARGET_BOOTLOADER_LINK_SCRIPT := \
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
+TARGET_CPU_ABI := armeabi
 
 BOARD_KERNEL_CMDLINE := mem=203M console=ttyMSM2,115200n8 androidboot.hardware=qcom
