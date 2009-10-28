@@ -41,12 +41,12 @@ ptentry PTABLE[] = {
     },
     {
         .start = 694,
-        .length = 552,
+        .length = 602,
         .name = "system",
     },
     {
-        .start = 1246,
-        .length = 801,
+        .start = 1296,
+        .length = 751,
         .name = "userdata",
     },
     {
@@ -54,7 +54,7 @@ ptentry PTABLE[] = {
     },
 };
 
-const char *board_cmdline(void) 
+const char *board_cmdline(void)
 {
     return "mem=201M console=ttyMSM2,115200n8";
 }
@@ -68,7 +68,7 @@ unsigned board_machtype(void)
 void board_init()
 {
     unsigned n;
-    
+
     /* if we already have partitions from elsewhere,
     ** don't use the hardcoded ones
     */
