@@ -21,7 +21,6 @@
 
 ifeq ($(QC_PROP),true)
     BOARD_USES_QCOM_HARDWARE := true
-    BOARD_USES_QCOM_7x_CHIPSET := true
     BOARD_USES_ADRENO_200 := true
     BOARD_USE_QCOM_TESTONLY := true
 
