@@ -50,3 +50,4 @@ BOARD_KERNEL_BASE    := 0x00200000
 BOARD_NAND_PAGE_SIZE := 2048
 
 BOARD_KERNEL_CMDLINE := mem=203M console=ttyDCC0 androidboot.hardware=qcom
+BOARD_EGL_CFG := vendor/qcom/$(TARGET_PRODUCT)/egl.cfg
