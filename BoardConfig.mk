@@ -15,42 +15,19 @@
 
 #
 # config.mk
-# 
+#
 # Product-specific compile-time definitions.
 #
 
-ifeq ($(QC_PROP),true)
-    BOARD_USES_QCOM_HARDWARE := true
-    BOARD_USES_ADRENO_200 := true
-    BOARD_USE_QCOM_TESTONLY := true
-
-    ifneq ($(BUILD_TINY_ANDROID), true)
-    BOARD_GPS_LIBRARIES := libloc_api
-    BOARD_CAMERA_LIBRARIES := libcamera
-    BOARD_HAVE_BLUETOOTH := true
-    endif   # !BUILD_TINY_ANDROID
-
-else
-    BOARD_USES_GENERIC_AUDIO := true
-    USE_CAMERA_STUB := true
-
-endif # QC_PROP
+USE_CAMERA_STUB := true
 
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := false
+TARGET_NO_KERNEL := true
 TARGET_NO_RADIOIMAGE := true
-
-TARGET_BOOTLOADER_LIBS := \
-	libboot_board_ffa \
-	libboot_arch_msm7k \
-	libboot_arch_armv6
-
-TARGET_BOOTLOADER_LINK_SCRIPT := \
-	vendor/qcom/$(TARGET_PRODUCT)/boot/boot.ld
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_CPU_ABI := armeabi
 TARGET_BOARD_PLATFORM := msm7k
 
-BOARD_KERNEL_CMDLINE := mem=203M console=ttyMSM2,115200n8 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE := mem=203M console=ttyDCC0 androidboot.hardware=qcom

@@ -16,32 +16,15 @@
 #
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := msm7627-perf_defconfig
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 endif
-
-include kernel/AndroidKernel.mk
 
 file := $(INSTALLED_KERNEL_TARGET)
 ALL_PREBUILT += $(file)
-$(file) : $(TARGET_PREBUILT_KERNEL) | $(ACP)
-	$(transform-prebuilt-to-target)
+$(file): $(TARGET_PREBUILT_KERNEL) | $(ACP)
+      $(transform-prebuilt-to-target)
 
-file := $(TARGET_OUT_KEYLAYOUT)/7k_ffa_keypad.kl
-ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/7k_ffa_keypad.kl | $(ACP)
-	$(transform-prebuilt-to-target)
-
-file := $(TARGET_OUT_KEYLAYOUT)/7k_handset.kl
-ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/7k_handset.kl | $(ACP)
-        $(transform-prebuilt-to-target)
+LOCAL_PATH := vendor/qcom/msm7627_ffa
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := 7k_ffa_keypad.kcm
-include $(BUILD_KEY_CHAR_MAP)
-
-# to build the bootloader you need the common boot stuff,
-# the architecture specific stuff, and the board specific stuff
-include vendor/qcom/$(TARGET_PRODUCT)/boot/Android.mk
-#include bootloader/legacy/Android.mk
