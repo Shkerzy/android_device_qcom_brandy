@@ -19,7 +19,23 @@
 # Product-specific compile-time definitions.
 #
 
-USE_CAMERA_STUB := true
+ifeq ($(QC_PROP),true)
+    BOARD_USES_QCOM_HARDWARE := true
+    BOARD_USES_ADRENO_200 := true
+    BOARD_USE_QCOM_TESTONLY := true
+
+    ifneq ($(BUILD_TINY_ANDROID), true)
+    BOARD_GPS_LIBRARIES := libloc_api
+#   BOARD_CAMERA_LIBRARIES := libcamera
+    USE_CAMERA_STUB := true
+    BOARD_HAVE_BLUETOOTH := true
+    endif   # !BUILD_TINY_ANDROID
+
+else
+    BOARD_USES_GENERIC_AUDIO := true
+    USE_CAMERA_STUB := true
+
+endif # QC_PROP
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := true

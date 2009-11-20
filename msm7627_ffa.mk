@@ -3,7 +3,6 @@ PRODUCT_PACKAGES := \
     VoiceDialer \
     SdkSetup
 
-
 $(call inherit-product, build/target/product/generic.mk)
 
 #Enabling Ring Tones
