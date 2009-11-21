@@ -38,12 +38,15 @@ else
 endif # QC_PROP
 
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := true
+TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_CPU_ABI := armeabi
 TARGET_BOARD_PLATFORM := msm7k
+
+BOARD_KERNEL_BASE    := 0x00200000
+BOARD_NAND_PAGE_SIZE := 2048
 
 BOARD_KERNEL_CMDLINE := mem=203M console=ttyDCC0 androidboot.hardware=qcom
