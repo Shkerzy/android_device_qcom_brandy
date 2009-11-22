@@ -37,7 +37,7 @@ else
 
 endif # QC_PROP
 
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 
