@@ -45,3 +45,17 @@ file := $(INSTALLED_KERNEL_TARGET)
 ALL_PREBUILT += $(file)
 $(file) : $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := 7k_ffa_keypad.kcm
+include $(BUILD_KEY_CHAR_MAP)
+
+file := $(TARGET_OUT_KEYLAYOUT)/7k_ffa_keypad.kl
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/7k_ffa_keypad.kl | $(ACP)
+	$(transform-prebuilt-to-target)
+
+file := $(TARGET_OUT_KEYLAYOUT)/7k_handset.kl
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/7k_handset.kl | $(ACP)
+	$(transform-prebuilt-to-target)
