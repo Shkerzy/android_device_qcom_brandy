@@ -37,6 +37,8 @@ else
 
 endif # QC_PROP
 
+TARGET_HAVE_TSLIB := true
+
 TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
