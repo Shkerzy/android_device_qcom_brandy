@@ -73,26 +73,33 @@ data.load.elf "&AndroidRoot/out/target/product/msm7627_ffa/obj/KERNEL_OBJ/vmlinu
  ; Map the virtual kernel symbols to physical addresses to give
  ; the debugger access to it before CPU MMU is initialized
 
+MMU.RESET
+MMU.FORMAT LINUX swapper_pg_dir 0xC0000000--0xCfffffff 0x00200000
+MMU.COMMON 0xC00000000--0xCFFFFFFF
+MMU.AUTOSCAN ON
+MMU.TABLEWALK ON
+MMU.ON
+
+
 ; Configure Trace32 for Linux debugging
 TASK.CONFIG "&T32LinuxScriptPath/linux.t32"		; Load Linux awareness
 MENU.ReProgram "&T32LinuxScriptPath/linux.men"		; Load Linux menu
-HELP.FILTER.Add rtoslinux						; Add linux awareness manual to help filter
+HELP.FILTER.Add rtoslinux				; Add linux awareness manual to help filter
+
+TASK.sYmbol.Option MMUSCAN OFF				; not necessary with table walk
+
 sYmbol.AutoLoad.CHECKLINUX "do &LinuxT32ScriptPath/autoload " 	; Switch on symbol autoloader
+
+GROUP.Create "kernel" 0xC00000000--0xCFFFFFFFF /RED
+
+
+; Configure Autoloader to automatically load symbols for process debugging
+Task.SYMBOL.Option Autoload Process
 
 ; Display Linux processes
 WINPOS  34% 65% 34% 35% 0. 0. W003
 task.dtask
 mode.hll
-
-; Configure Autoloader to automatically load symbols for process debugging
-Task.SYMBOL.Option Autoload Process
-
-MMU.RESET
-MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc7ffffff 0x80000000
-MMU.COMMON 0BF000000--0FFffffff
-MMU.AUTOSCAN ON
-MMU.TABLEWALK ON
-;MMU.ON
 
 ;; Setup break points in linux kernel to ease debugging
 b.s \\vmlinux\panic\panic
@@ -164,13 +171,7 @@ data.load.elf &symbolPath\libc.so &libcAddr /gnu /nocode /noclear
 print "Adding default source paths..."
 y.spath.srd "&AndroidRoot/kernel"
 y.spath.srd "&AndroidRoot/hardware/msm7k"
-y.spath.srd "&AndroidRoot/frameworks/base/camera"
-y.spath.srd "&AndroidRoot/frameworks/base/graphics"
-y.spath.srd "&AndroidRoot/frameworks/base/libs"
-y.spath.srd "&AndroidRoot/frameworks/base/media"
-y.spath.srd "&AndroidRoot/frameworks/base/opengl"
-y.spath.srd "&AndroidRoot/frameworks/base/media"
-y.spath.srd "&AndroidRoot/frameworks/base/services"
+y.spath.srd "&AndroidRoot/frameworks/base"
 y.spath.srd "&AndroidRoot/system/core"
 
 print "Done."
