@@ -65,3 +65,9 @@ file := $(TARGET_OUT_KEYLAYOUT)/7k_handset.kl
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/7k_handset.kl | $(ACP)
 	$(transform-prebuilt-to-target)
+
+file := $(TARGET_OUT)/etc/vold.fstab
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/vold.fstab | $(ACP)
+	$(transform-prebuilt-to-target)
+
