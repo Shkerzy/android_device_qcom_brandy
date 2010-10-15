@@ -17,3 +17,6 @@ DEVICE_PROVISIONED=1
 debug.sf.hw=0
 dalvik.vm.heapsize=24m
 media.stagefright.enable-player=false
+media.stagefright.enable-meta=false
+media.stagefright.enable-scan=false
+media.stagefright.enable-http=false
