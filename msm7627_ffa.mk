@@ -26,3 +26,4 @@ include frameworks/base/data/sounds/OriginalAudio.mk
 PRODUCT_BRAND := qcom
 PRODUCT_NAME := msm7627_ffa
 PRODUCT_DEVICE := msm7627_ffa
+PRODUCT_LOCALES := hdpi
