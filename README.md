@@ -1,2 +1,3 @@
-android_device_qcom_brandy
-==========================
+
+Configurations for compilation firmware from source code of Code Aurora
+=======================================================================
