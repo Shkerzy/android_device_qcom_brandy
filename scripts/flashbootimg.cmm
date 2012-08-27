@@ -7,7 +7,7 @@ local &pagesize
 local &hdr
 
 sys.down
-sys.cpu arm1136j
+sys.cpu arm1136jf-s
 sys.jtagclock rtck
 sys.mode attach
 if state.run() 
