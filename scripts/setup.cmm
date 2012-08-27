@@ -73,7 +73,7 @@ global &NANDWRITE
 ;&CMDLINE=         "mem=50M"
 ;&CMDLINE=         "mem=64M"
 &CMDLINE=         "mem=458M"
-&CMDLINE=         "&(CMDLINE) console=ttyMSM2"
+&CMDLINE=         "&(CMDLINE) console=ttyMSM2,115200n8 androidboot.hardware=qcom"
 ;&CMDLINE= "&(CMDLINE) board_halibut.ffa=1"
 ;&CMDLINE=         "&(CMDLINE) console=tty1"
 ;&CMDLINE=         "&(CMDLINE) androidboot.console=ttyMSM0"
