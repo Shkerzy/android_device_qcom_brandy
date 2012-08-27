@@ -53,7 +53,7 @@
 	[KEYMAP_INDEX(3, 4)] = KEY_RESERVED	
 
 /* the name should be exactly same as *.kcm file */
-#define KEYPAD_NAME	"msm7627_sku2_keypad"
+#define KEYPAD_NAME	"7k_ffa_keypad"
 
 /*******************************************
  *		TOUCH PANEL(CTP) MODULE
