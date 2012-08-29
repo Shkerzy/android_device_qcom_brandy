@@ -66,6 +66,11 @@ ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/7k_handset.kl | $(ACP)
 	$(transform-prebuilt-to-target)
 
+file := $(TARGET_OUT_KEYLAYOUT)/isdm_KeypadLayout.kl
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/isdm_KeypadLayout.kl | $(ACP)
+	$(transform-prebuilt-to-target)
+
 file := $(TARGET_OUT)/etc/vold.fstab
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/vold.fstab | $(ACP)
