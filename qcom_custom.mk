@@ -19,7 +19,7 @@ QCOM_CUSTOM_LCD_IF			:= lcdc
 # QCOM_CUSTOM_FLASH information should be <nand/nor>_<size>_block_<block_size>
 QCOM_CUSTOM_FLASH			:= nand_block_128k_page_2048
 
-TARGET_BOARD_MACHTYPE			:= 1007005
+TARGET_BOARD_MACHTYPE			:= 2706
 
 ifneq (, $(findstring block_128k, $(QCOM_CUSTOM_FLASH)))
 BOARD_FLASH_BLOCK_SIZE			:= 0x20000
