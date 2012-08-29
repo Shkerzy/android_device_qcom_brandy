@@ -35,9 +35,9 @@ ifeq ($(QC_PROP),true)
     BOARD_HAS_QCOM_WLAN := true
     #BOARD_USES_GENERIC_AUDIO := true
     BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-    WPA_SUPPLICANT_VERSION := VER_0_6_X
-    WIFI_DRIVER_MODULE_PATH :=  "/system/lib/modules/libra.ko"
-    WIFI_DRIVER_MODULE_NAME :=  "libra"
+#    WPA_SUPPLICANT_VERSION := VER_0_6_X
+#    WIFI_DRIVER_MODULE_PATH :=  "/system/lib/modules/libra.ko"
+#    WIFI_DRIVER_MODULE_NAME :=  "libra"
     endif   # !BUILD_TINY_ANDROID
 
 else
@@ -83,6 +83,16 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := bcm4329
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4329
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/wlan/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/wlan/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/wlan/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 DISABLE_DEXPREOPT=false
 
