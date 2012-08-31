@@ -1,3 +1,3 @@
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/msm7627_ffa.mk
+    $(LOCAL_DIR)/one_touch_990_ALRU.mk

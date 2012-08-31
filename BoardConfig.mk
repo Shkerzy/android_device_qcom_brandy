@@ -54,7 +54,8 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
-TARGET_CPU_ABI := armeabi
+TARGET_CPU_ABI := armeabi-v6l
+TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_BOOTLOADER_BOARD_NAME := 7x27
@@ -66,7 +67,7 @@ BOARD_KERNEL_BASE    := 0x13600000
 BOARD_KERNEL_PAGESIZE := 2048
 
 BOARD_KERNEL_CMDLINE := mem=458M console=ttyMSM2,115200n8 androidboot.hardware=qcom
-BOARD_EGL_CFG := device/qcom/$(TARGET_PRODUCT)/egl.cfg
+BOARD_EGL_CFG := device/qcom/$(TARGET_DEVICE)/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x005C0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
@@ -77,7 +78,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 TARGET_USERIMAGES_USE_EXT4 := false
-TARGET_SPECIFIC_HEADER_PATH := device/qcom/msm7627_ffa/include
+TARGET_SPECIFIC_HEADER_PATH := device/qcom/$(TARGET_DEVICE)/include
 
 BOARD_VENDOR_USE_AKMD := akm8975
 BOARD_HAVE_FM_RADIO := true
@@ -86,15 +87,15 @@ BOARD_FM_DEVICE := bcm4329
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WLAN_DEVICE           := bcm4329
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/wlan/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/wlan/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/wlan/fw_bcm4329.bin nvram_path=/proc/calibration"
-WIFI_DRIVER_MODULE_NAME     := "bcm4329"
+#BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+#WPA_SUPPLICANT_VERSION      := VER_0_6_X
+#BOARD_WLAN_DEVICE           := bcm4329
+#WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+#WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/wlan/fw_bcm4329.bin"
+#WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/wlan/fw_bcm4329_apsta.bin"
+#WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/wlan/fw_bcm4329.bin nvram_path=/proc/calibration"
+#WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 DISABLE_DEXPREOPT=false
 
-include device/qcom/$(TARGET_PRODUCT)/qcom_custom.mk
+include device/qcom/$(TARGET_DEVICE)/qcom_custom.mk
