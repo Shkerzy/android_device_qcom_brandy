@@ -2,7 +2,7 @@ ifeq ($(QCOM_CUSTOM),true)
 QCOM_CUSTOM_GEN_HEADER			:= true
 TARGET_PREBUILT_THIRD_PARTY_APPS	:= true
 
-QCOM_CUSTOM_INCLUDE			:= device/qcom/$(TARGET_PRODUCT)/include
+QCOM_CUSTOM_INCLUDE			:= device/qcom/$(TARGET_DEVICE)/include
 QCOM_CUSTOM_KERNEL_INCLUDE		:= kernel/arch/arm/mach-msm/include/mach
 
 # debug level(0-2) for lk
@@ -56,7 +56,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE	:= 5242880	#0x00500000	# 5 MB
 BOARD_TOMBSTONESIMAGE_PARTITION_SIZE	:= 4194304	#0x00400000	# not used on the board
 
 # include definitions makefile
-BOARD_DEFINITION_MK			:= device/qcom/$(TARGET_PRODUCT)/definitions.mk
+BOARD_DEFINITION_MK			:= device/qcom/$(TARGET_DEVICE)/definitions.mk
 include $(BOARD_DEFINITION_MK)
 
 # board_partitions_h
