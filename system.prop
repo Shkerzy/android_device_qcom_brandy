@@ -37,3 +37,4 @@ ro.use_data_netmgrd=false
 # system prop for Bluetooth Auto connect for remote initated connections
 #
 ro.bluetooth.remote.autoconnect=true
+persist.service.adb.enable=1
